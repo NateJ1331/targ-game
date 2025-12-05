@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bj7rmdxpbf5i6"]
+[gd_scene load_steps=6 format=4 uid="uid://bj7rmdxpbf5i6"]
 
 [ext_resource type="Texture2D" uid="uid://cqy2ot4oo3t0j" path="res://icon.svg" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de5ssuw3tpoh2" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://cjfy1x1c0ndfm" path="res://weapon.gd" id="3_h2yge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("1_0xm2m")
@@ -80,3 +81,14 @@ tile_map_data = PackedByteArray("AAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAE
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(-44, -28)
+
+[node name="weapon" type="Node2D" parent="Player"]
+modulate = Color(0.8315308, 0, 0.3731071, 1)
+position = Vector2(6, 0)
+rotation = 3.626794
+script = ExtResource("3_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/weapon"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_0xm2m")
