@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_down"):
 				direction.y += 1
 
-		position += direction * delta * speed
+		move_and_collide( direction * delta * speed )
