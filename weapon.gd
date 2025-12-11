@@ -10,14 +10,17 @@ func attack() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var radius = 10  
+	var radius = 8
+	var mouse_pos = get_global_mouse_position()
+	var player_pos = player.global_position
 	
-	var angle = (get_global_mouse_position() - player.global_position).angle()	
+	var min_distance = 4.0
 	
-	look_at(get_global_mouse_position())
-								#Nate Note: v I have no idea what this Vector thing does but it works v
-	global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	if mouse_pos.distance_to(player_pos) > min_distance:
+		var angle = (mouse_pos - player_pos).angle()
+		
+		global_position = player_pos + Vector2.RIGHT.rotated(angle) * radius
+		
+		rotation = angle
 
-	if Input.is_physical_key_pressed(KEY_Z):
-		attack()
 	

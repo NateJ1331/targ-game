@@ -93,5 +93,6 @@ rotation = 3.626794
 script = ExtResource("3_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/weapon"]
+rotation = 1.5707964
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_0xm2m")
